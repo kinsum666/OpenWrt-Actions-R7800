@@ -299,11 +299,7 @@ CONFIG_PACKAGE_luci-theme-material=y
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 EOF
 
-CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-app-mwan3=y
-CONFIG_PACKAGE_luci-app-mwan3helper=y
-CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-mwan3helper-zh-cn=y
+
 
 # 常用软件包:
 # cat >> .config <<EOF
@@ -314,6 +310,11 @@ CONFIG_PACKAGE_luci-i18n-mwan3helper-zh-cn=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
 # CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-mwan3=y
+CONFIG_PACKAGE_luci-app-mwan3helper=y
+CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-mwan3helper-zh-cn=y
 # EOF
 
 # 
