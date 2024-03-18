@@ -1,10 +1,6 @@
 #!/bin/bash
 #=================================================
-# https://github.com/ClayMoreBoy/OpenWrt-Actions-R7800
-# Description: R7800 DIY script
-# Lisence: MIT
-# Author: ClayMoreBoy
-# Github: https://github.com/ClayMoreBoy
+# # Description: R7800 DIY script
 #=================================================
 
 # 取掉默认主题
@@ -68,8 +64,8 @@ touch ./.config
 
 # 编译者信息
 cat >> .config <<EOF
-CONFIG_KERNEL_BUILD_USER="ClayMoreBoy"
-CONFIG_KERNEL_BUILD_DOMAIN="GitHub Actions @ ClayMoreBoy"
+CONFIG_KERNEL_BUILD_USER="Kinsum"
+CONFIG_KERNEL_BUILD_DOMAIN="GitHub Actions @ Kinsum666"
 EOF
 
 # 编译R7800固件:
@@ -302,6 +298,12 @@ CONFIG_PACKAGE_luci-theme-material=y
 # CONFIG_PACKAGE_luci-theme-argon-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 EOF
+
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-mwan3=y
+CONFIG_PACKAGE_luci-app-mwan3helper=y
+CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-mwan3helper-zh-cn=y
 
 # 常用软件包:
 # cat >> .config <<EOF
