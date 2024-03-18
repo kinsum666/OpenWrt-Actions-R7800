@@ -22,14 +22,21 @@ cp -f ../zzz-default-settings package/lean/default-settings/files/
 sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
 # 修改固件生成名字,增加当天日期(by:左右）
-sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=ClayMoreBoy-$(shell date +%Y%m%d)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
+sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=Kinsum-$(shell date +%Y%m%d)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
 # 修改版本号
 cid=$(date "+%Y-%m-%d")
-sed -i 's/R2020/R[${cid}]/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/R2024/R[${cid}]/g' package/lean/default-settings/files/zzz-default-settings
 
-# 修改版本号
-sed -i 's/V2020/V${{ env.DATE }}/g' package/base-files/files/etc/banner
+# 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
+sed -i '/uci commit system/i\uci set system.@system[0].hostname='Kinsum'' package/lean/default-settings/files/zzz-default-settings
+
+sed -i "s/hostname='OpenWrt'/hostname='Nighthawk-X4'/g" package/base-files/files/bin/config_generate
+cat package/base-files/files/bin/config_generate |grep hostname=
+echo '=========Alert hostname OK!========='
+
+# 版本号里显示一个自己的名字（Kinsum build $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
+sed -i "s/OpenWrt /Kinsum Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # 添加第三方软件包
 git clone https://github.com/OpenWrt-Actions/OpenAppFilter package/OpenAppFilter
