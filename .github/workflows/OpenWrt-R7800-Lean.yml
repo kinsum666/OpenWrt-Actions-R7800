@@ -1,9 +1,6 @@
 #=================================================
-# https://github.com/ClayMoreBoy/OpenWrt-Actions-R7800
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Author: ClayMoreBoy
-# Github: https://github.com/ClayMoreBoy
 #=================================================
 
 name: OpenWrt-R7800-Lean
@@ -42,11 +39,11 @@ env:
   # 分支
   BRANCH: R7800-Lean
   # Github 用户名
-  GITHUB_USER_NAME: ClayMoreBoy
+  GITHUB_USER_NAME: kinsum666
   # Github 邮箱
   GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
   # Github
-  GITHUB: github.com/ClayMoreBoy/OpenWrt-Actions-R7800.git
+  GITHUB: github.com/kinsum666/OpenWrt-Actions-R7800.git
   # 上传固件
   UPLOAD_FIRMWARE: true
   # 上传到奶牛快传
@@ -54,7 +51,7 @@ env:
   # 创建+上传发布
   CREATE_RELEASE: true
   # 编译者
-  BUILD_USER: ClayMoreBoy
+  BUILD_USER: Kinsum
   # 微信通知
   SEND_WECHAT_MSG: false
 
